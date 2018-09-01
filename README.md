@@ -1,1 +1,1 @@
-# super-octo-computing-machine
+# PAPi (Pangenome Analysis Pipeline)
