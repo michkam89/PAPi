@@ -37,10 +37,13 @@ print("########## Loaded", len(files), "files.")
 # Input sequences should be named after the genomes used. They will be used to
 # change name of fasta headers inside the files.
 print("########## Processing files...")
+gnames = []
 n = 0
 for file in files:
     n += 1
     basename = re.match("(.*?).faa", file).group(1)
+    gnames.append(basename)
+    #print(gnames)
     print("File", n, basename)
     input_name = inputdir + '\\' + file
     output_name = 'Pangenome_' + file
@@ -51,4 +54,10 @@ for file in files:
         seq = str(record.seq)
         output.write(">" + header + "\n" + seq +"\n")
 output.close()
+
+gnames_file = open("gnames_file.csv", "w")
+for genome in gnames:    
+        gnames_file.write(genome + "\n")
+gnames_file.close()
+
 print("########## Job done, good luck...")
