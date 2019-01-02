@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Michał Kamiński
+Returns file named coreclusters.txt with core protein cluster list
 """
 import os
 import re
@@ -32,7 +32,7 @@ gnames_file.close()
 
 if len(gnames) == 0:
     print("######Error: gname file empty!")
-   
+
 #creates dictionary where cluster names are keys and names of bacteria in this cluster are values
 dict={}
 with open(inputfile) as infile:
@@ -44,14 +44,14 @@ with open(inputfile) as infile:
                 dict[cluster_name]=[]
             else:
                 for bacteria in gnames:
-                    m=[]                    
+                    m=[]
                     m.append(re.findall(bacteria, line))
                     m = list(filter(None, m))
                     dict[cluster_name]=dict[cluster_name]+m
-                    #print(cluster_name, dict[cluster_name]) 
+                    #print(cluster_name, dict[cluster_name])
 
 if len(dict) == 39909:
-    print("######Test 1 OK")       
+    print("######Test 1 OK")
 #%% BOCK2 Retreive initial complete clusters
 gcount = len(gnames)
 
@@ -68,7 +68,7 @@ clusters_complete_duplicates=[]
 for key, value in dict.items():
     if len(value) == gcount:
         #print(key)
-        clusters_complete.append(key)       
+        clusters_complete.append(key)
         if len(value) != len(list(uniq(value))):
             clusters_complete_duplicates.append(key)
 
@@ -84,7 +84,7 @@ for key, value in dict.items():
             clusters_oversize_duplicates.append(key)
             if len(list(uniq(value))) == gcount:
                 clusters_to_recover.append(key)
-           
+
 print("######There are ", len(clusters_to_recover), "potential protein clusters available for recovery")
 
 core_clusters=[x for x in clusters_complete if x not in clusters_complete_duplicates]
