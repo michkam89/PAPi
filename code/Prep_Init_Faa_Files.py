@@ -32,11 +32,11 @@ outdir = args.outdir
 os.makedirs(outdir, exist_ok = True)
 #%% GET LIST OF FILES
 files = list(os.listdir(inputdir))
-print("########## Loaded", len(files), "files...")
+print("########## Loaded", len(files), "genome files...")
 #%% POCESSING FILES
 # Input sequences should be named after the genomes used. They will be used to
 # change name of fasta headers inside the files.
-print("########## Processing files...")
+print("########## Processing genome files...")
 gnames = []
 n = 0
 for file in files:
@@ -44,7 +44,7 @@ for file in files:
     basename = re.match("(.*?).faa", file).group(1)
     gnames.append(basename)
     #print(gnames)
-    print("File", n, basename)
+    print("Genome", n, basename)
     input_name = inputdir + '/' + file
     output_name = 'Pangenome_' + file
     output = open(os.path.join(outdir, output_name), "w")
@@ -60,4 +60,4 @@ for genome in gnames:
         gnames_file.write(genome + "\n")
 gnames_file.close()
 
-print("########## Job done, good luck...")
+print("########## DONE..")
