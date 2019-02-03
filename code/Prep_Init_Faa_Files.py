@@ -60,4 +60,4 @@ for genome in gnames:
         gnames_file.write(genome + "\n")
 gnames_file.close()
 
-print("########## DONE..")
+print("########## DONE...")
