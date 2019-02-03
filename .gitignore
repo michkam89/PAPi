@@ -1,0 +1,8 @@
+*.zip
+*.R
+*.py
+*.csv
+.Rhistory
+.Rproj.user
+/tmp
+/output/*
