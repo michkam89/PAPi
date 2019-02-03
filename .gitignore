@@ -5,4 +5,4 @@
 .Rhistory
 .Rproj.user
 /tmp
-/output
+/output/*
