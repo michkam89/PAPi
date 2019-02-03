@@ -26,6 +26,7 @@ GNAMES=gnames_file.csv
 # create temp folder
 mkdir tmp
 mkdir tmp/other
+mkdir plots
 
 # Run test or user mode
 if [ "$MODE" = "test" ]; then
