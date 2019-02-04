@@ -1,7 +1,9 @@
 ---
 title: "PAPi (Pangenome Analysis Pipeline) v1.0.0"
 author: "Michał Kamiński"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 ##DESCRIPTION
 The analysis is designed to calculate core-pangenome for defined dataset of given protein sequences.

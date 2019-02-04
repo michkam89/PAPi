@@ -1,6 +1,4 @@
 *.zip
-*.R
-*.py
 *.csv
 .Rhistory
 .Rproj.user
