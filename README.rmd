@@ -45,4 +45,7 @@ head(df)
 
 3. Run PAPi with your data and have fun :)
 
-If you found this code usefull please cite this repository and/or this paper: _soon :)_
+If you found this code usefull please cite this repository and/or this paper: 
+Kaminski, M.A.; Sobczak, A.; Dziembowski, A.; Lipinski, L. Genomic Analysis of γ-Hexachlorocyclohexane-Degrading Sphingopyxis lindanitolerans WS5A3p Strain in the Context of the Pangenome of Sphingopyxis. Genes 2019, 10, 688.
+
+Thanks!
