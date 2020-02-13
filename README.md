@@ -5,7 +5,7 @@ output:
   word_document: default
   pdf_document: default
 ---
-##DESCRIPTION
+## DESCRIPTION
 The analysis is designed to calculate core-pangenome for defined dataset of given protein sequences.
 At the moment PAPi in not self-sufficient and require some user effort.
 User should provide __.faa__ files with appropriately formatted fasta headers and file names:
