@@ -7,6 +7,19 @@
 #' @export
 
 append_proteins <- function(rebased_clusters){
+  # assertions
+  test <- class(rebased_clusters) == "character"
+  if (!test) {
+    stop("input is not a character vector")
+  }
+  
+  test <- startsWith(rebased_clusters[1], ">")
+  if (!test) {
+    stop(
+      paste("first element is not a cluster name as does not contain '>' as first character",
+            "lines with clusters should contain '>' as a first character in each row"))
+  }
+  
   # vector placeholder
   vec <- vector()
   

@@ -7,6 +7,19 @@
 #' @export
 
 gather_clusters <- function(clstr_file) {
+  # assertions
+  test <- class(clstr_file) == "character"
+  if (!test) {
+    stop("input is not a character vector")
+  }
+  
+  test <- any(startsWith(clstr_file, ">"))
+  if (!test) {
+    stop(
+      paste("input doesn't seem to contain any cluster",
+            "lines with clusters should contain '>' as a first character in each row"))
+  }
+  
   # paceholder for list
   cluster_list <- list()
 
@@ -15,17 +28,17 @@ gather_clusters <- function(clstr_file) {
     l <- clstr_file[line]
     
     
-    # check if line contains cluster name
+    # check if element contains cluster name
     is_cluster_name <- startsWith(l, ">")
     if (is_cluster_name) {
-      # cut the list starting from position of current element
+      # cut the vector starting from position of current element
       rebased_clstr_file <- clstr_file[line:length(clstr_file)]
       
       # get all protein names from this cluster
       cluster_list[[l]] <- append_proteins(rebased_clstr_file)
       
     } else {
-      # do not perform action for lines that are not cluster names
+      # do not perform action for elements that are not cluster names
       next()
     }
     
