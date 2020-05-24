@@ -2,7 +2,7 @@
 
 clstr_fdir <- "./data/sph_pan_cdhit_output.clstr"
 
-# read file into R as a list of lines
+# read file into R as a character vector
 clstr_file <- readLines(clstr_fdir)
 
 # cluster_prot_list saved into data folder as takes some time to compute
