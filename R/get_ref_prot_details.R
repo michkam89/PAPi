@@ -1,5 +1,5 @@
-#' get_ref_prot_details
 #' Extracts organism/genome name as well as protein identifier from reference protein line
+#' 
 #' @param ref_prot_line character vector; must contain genome name (equal to the
 #'   .faa file name), protein identifier must start with ">" and be separated
 #'   from genome name with underscore "_"
@@ -10,6 +10,7 @@
 #'
 #' @examples
 #' get_ref_prot_details(">PROTEIN_ID1_GENOME_A", c("GENOME_A", "GENOME_B"))
+#' 
 get_ref_prot_details <- function(ref_prot_line, 
                                  genomes){
   
@@ -34,7 +35,10 @@ get_ref_prot_details <- function(ref_prot_line,
   ref_prot_name <- str_extract(ref_prot_line, paste0("(?<=>).+(?=_", genome, ")"))
   
   list(
-    genome = genome,
-    ref_prot_name = ref_prot_name)
+    ref_prot = list(
+      host = genome,
+      name = ref_prot_name
+      )
+    )
   
 }

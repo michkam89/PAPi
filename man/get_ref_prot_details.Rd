@@ -2,8 +2,7 @@
 % Please edit documentation in R/get_ref_prot_details.R
 \name{get_ref_prot_details}
 \alias{get_ref_prot_details}
-\title{get_ref_prot_details
-Extracts organism/genome name as well as protein identifier from reference protein line}
+\title{Extracts organism/genome name as well as protein identifier from reference protein line}
 \usage{
 get_ref_prot_details(ref_prot_line, genomes)
 }
@@ -18,9 +17,9 @@ from genome name with underscore "_"}
 list with genome name and protein identifier of the reference protein
 }
 \description{
-get_ref_prot_details
 Extracts organism/genome name as well as protein identifier from reference protein line
 }
 \examples{
 get_ref_prot_details(">PROTEIN_ID1_GENOME_A", c("GENOME_A", "GENOME_B"))
+
 }
